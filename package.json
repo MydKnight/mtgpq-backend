@@ -1,0 +1,35 @@
+{
+  "name": "mtgpq-backend",
+  "version": "1.0.0",
+  "description": "Collection of Web Services for interacting with the MTGPQ Utilities",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./server.js --exec babel-node -e js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MydKnight/mtgpq-backend.git"
+  },
+  "keywords": [
+    "mtgpq",
+    "web-service"
+  ],
+  "author": "Shiloh Madsen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MydKnight/mtgpq-backend/issues"
+  },
+  "homepage": "https://github.com/MydKnight/mtgpq-backend#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}
