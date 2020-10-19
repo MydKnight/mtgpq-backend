@@ -1,17 +1,19 @@
+import {
+  addNewCard, getCards, getCardWithID, updateCard, deleteCard,
+} from '../controllers/cardController';
+
 const routes = (app) => {
-    app.route('/card')
-        .get((req, res) =>
-            res.send('GET request successful'))
+  app.route('/card')
+    .get(getCards)
 
-        .post((req, res) => 
-            res.send('POST request successful'));
+    .post(addNewCard);
 
-    app.route('/card/:cardID')
-        .put((req, res) => 
-            res.send('PUT request successful'))
+  app.route('/card/:cardID')
+    .get(getCardWithID)
 
-        .delete((req, res) => 
-            res.send('DELETE request successful'));
-}
+    .put(updateCard)
+
+    .delete(deleteCard);
+};
 
 export default routes;
