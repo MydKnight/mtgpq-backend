@@ -15,7 +15,7 @@ export const addNewCard = (req, res) => {
 };
 
 export const getCards = (req, res) => {
-  Card.find({}, (err, card) => {
+  Card.find(req.query, (err, card) => {
     if (err) {
       res.send(err);
     }

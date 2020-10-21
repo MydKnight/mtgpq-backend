@@ -2,7 +2,7 @@ import {
   addNewCard, getCards, getCardWithID, updateCard, deleteCard,
 } from '../controllers/cardController';
 
-const routes = (app) => {
+const cardRoutes = (app) => {
   app.route('/card')
     .get(getCards)
 
@@ -16,4 +16,4 @@ const routes = (app) => {
     .delete(deleteCard);
 };
 
-export default routes;
+export default cardRoutes;

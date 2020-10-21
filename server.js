@@ -3,7 +3,9 @@ import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
-import routes from './src/routes/cardRoutes';
+import morgan from 'morgan';
+import cardRoutes from './src/routes/cardRoutes';
+import userRoutes from './src/routes/userRoutes';
 
 const app = express();
 const PORT = 8000;
@@ -21,8 +23,12 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-routes(app);
+// Use morgan to log requests to the console 
+app.use(morgan('dev'));
 
-app.get('/', (req, res) => res.send(`Node and express server is up and running. Port: ${PORT}`));
+cardRoutes(app);
+userRoutes(app);
+
+app.get('/', (req, res) => res.send(`Node and Express server is up and running. Port: ${PORT}`));
 
 app.listen(PORT, () => console.log(`Backend running on port ${PORT}`));
